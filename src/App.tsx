@@ -1,35 +1,82 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import TopNavBar from './components/TopNavBar';
+import SideNavBar from './components/SideNavBar';
+import ProtectedRoute from './components/ProtectedRoute';
+import SignIn from './pages/SignIn';
+import Stores from './components/Stores';
+import SKUs from './components/SKUs';
+import Calendar from './components/Calendar';
+import Planning from './components/Planning';
+import Calculations from './components/Calculations';
+import Chart from './components/Chart';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App: React.FC = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="app-container">
+        <TopNavBar />
+        <div className="main-content">
+          <SideNavBar />
+          <div className="content">
+            <Routes>
+              <Route path="/signin" element={<SignIn />} />
+              <Route
+                path="/stores"
+                element={
+                  <ProtectedRoute>
+                    <Stores />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/skus"
+                element={
+                  <ProtectedRoute>
+                    <SKUs />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/calendar"
+                element={
+                  <ProtectedRoute>
+                    <Calendar />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/planning"
+                element={
+                  <ProtectedRoute>
+                    <Planning />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/calculations"
+                element={
+                  <ProtectedRoute>
+                    <Calculations />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/chart"
+                element={
+                  <ProtectedRoute>
+                    <Chart />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/" element={<SignIn />} />
+            </Routes>
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </Router>
+  );
+};
 
-export default App
+export default App;

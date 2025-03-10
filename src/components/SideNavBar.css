@@ -1,0 +1,32 @@
+.side-nav {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding-top: 2rem;
+    height: 100vh;
+  }
+  
+  .side-nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-nav li {
+    margin-bottom: 1rem;
+  }
+  
+  .side-nav a {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .side-nav a i {
+    margin-right: 1rem;
+  }
+  
+  .side-nav a.active {
+    background-color: #ddd;
+    font-weight: bold;
+  }
