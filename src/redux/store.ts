@@ -2,12 +2,15 @@ import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './authSlice';
 import navReducer from './navSlice';
 import storesReducer from './storesSlice';
+import skuReducer from '../redux/skusSlice';
+
 
 export const store = configureStore({
   reducer: {
     auth: authReducer,
     nav: navReducer,
-    stores: storesReducer, // Add stores here!
+    stores: storesReducer,
+    skus: skuReducer,
   },
 });
 

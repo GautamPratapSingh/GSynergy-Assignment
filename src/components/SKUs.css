@@ -1,0 +1,33 @@
+.sku-container {
+    padding: 20px;
+  }
+  
+  .sku-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .sku-table th,
+  .sku-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .add-sku-form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .add-sku-form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  .add-sku-form button {
+    padding: 8px 12px;
+    background-color: #f2745f;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
