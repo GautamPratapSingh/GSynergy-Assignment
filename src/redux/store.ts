@@ -3,6 +3,9 @@ import authReducer from './authSlice';
 import navReducer from './navSlice';
 import storesReducer from './storesSlice';
 import skuReducer from '../redux/skusSlice';
+import planningReducer from './planningSlice';
+import chartReducer from './chartSlice';
+
 
 
 export const store = configureStore({
@@ -11,6 +14,8 @@ export const store = configureStore({
     nav: navReducer,
     stores: storesReducer,
     skus: skuReducer,
+    planning:planningReducer,
+    chart:chartReducer,
   },
 });
 

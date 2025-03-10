@@ -1,0 +1,18 @@
+.chart-container {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .store-select {
+    padding: 10px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
